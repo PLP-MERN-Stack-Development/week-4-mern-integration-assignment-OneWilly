@@ -1,79 +1,160 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19909307&assignment_repo_type=AssignmentRepo)
-# MERN Stack Integration Assignment
+# MERN Stack Blog Application
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+A full-stack blog application built with MongoDB, Express.js, React.js, and Node.js for the PLP MERN Stack Development Course.
 
-## Assignment Overview
+## 🚀 Features
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+- **User Authentication** - JWT-based registration and login
+- **CRUD Operations** - Create, read, update, and delete blog posts
+- **Category Management** - Organize posts by categories
+- **Search & Filter** - Search posts and filter by category
+- **Pagination** - Efficient data loading
+- **Responsive Design** - Mobile-first design with Tailwind CSS
+- **RESTful API** - Well-structured backend API
 
-## Project Structure
+## 🛠️ Tech Stack
+
+### Backend
+- Node.js & Express.js
+- MongoDB & Mongoose
+- JWT Authentication
+- Joi Validation
+- Bcrypt for password hashing
+
+### Frontend
+- React 18
+- React Router DOM
+- Tailwind CSS
+- Lucide React Icons
+- React Hot Toast
+
+## 📁 Project Structure
 
 ```
 mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
+├── client/                 # React frontend
+│   ├── src/
 │   │   ├── components/     # Reusable components
 │   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
+│   │   ├── context/        # React context
 │   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
+│   │   └── hooks/          # Custom hooks
+│   └── package.json
+├── server/                 # Express backend
 │   ├── controllers/        # Route controllers
 │   ├── models/             # Mongoose models
 │   ├── routes/             # API routes
 │   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
+│   ├── utils/              # Utilities
+│   └── package.json
+└── README.md
 ```
 
-## Getting Started
+## 🚀 Installation
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+### Prerequisites
+- Node.js (v18+)
+- MongoDB
 
-## Files Included
+### Setup
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/PLP-MERN-Stack-Development/week-4-mern-integration-assignment-OneWilly.git
+   cd week-4-mern-integration-assignment-OneWilly
+   ```
 
-## Requirements
+2. **Server Setup**
+   ```bash
+   cd server
+   npm install
+   cp .env.example .env
+   # Edit .env with your MongoDB URI and JWT secret
+   npm run dev
+   ```
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+3. **Client Setup**
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
 
-## Submission
+## 🔧 Environment Variables
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+### Server (.env)
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/mern-blog
+JWT_SECRET=your-jwt-secret-key
+CLIENT_URL=http://localhost:5173
+```
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+### Client (.env)
+```
+VITE_API_URL=http://localhost:5000/api
+```
 
-## Resources
+## 📚 API Endpoints
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+### Authentication
+- `POST /api/auth/register` - Register user
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/me` - Get current user
+
+### Posts
+- `GET /api/posts` - Get all posts (with pagination/search)
+- `GET /api/posts/:id` - Get single post
+- `POST /api/posts` - Create post (protected)
+- `PUT /api/posts/:id` - Update post (protected)
+- `DELETE /api/posts/:id` - Delete post (protected)
+
+### Categories
+- `GET /api/categories` - Get all categories
+- `POST /api/categories` - Create category (protected)
+
+## 🎯 Assignment Requirements
+
+✅ **Task 1: Project Setup**
+- MERN stack structure with client/server separation
+- MongoDB integration with Mongoose
+- Express.js API with proper middleware
+
+✅ **Task 2: Backend Development**
+- RESTful API endpoints
+- User authentication with JWT
+- Data validation with Joi
+- Error handling middleware
+
+✅ **Task 3: Frontend Development**
+- React components and routing
+- State management with Context API
+- Custom hooks for API calls
+- Responsive UI with Tailwind CSS
+
+✅ **Task 4: Integration**
+- API service layer
+- Authentication flow
+- CRUD operations
+- Search and pagination
+
+✅ **Task 5: Advanced Features**
+- Protected routes
+- Image upload support
+- Category management
+- User profiles
+
+## 🚀 Usage
+
+1. Start both server and client
+2. Register a new account or login
+3. Create, edit, and manage blog posts
+4. Search and filter posts by category
+5. Navigate through paginated results
+
+## 👨‍💻 Author
+
+**William Oneka**
+- GitHub: [@OneWilly](https://github.com/OneWilly)
+- Course: PLP MERN Stack Development
+- Assignment: Week 4 MERN Integration
